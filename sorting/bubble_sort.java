@@ -15,6 +15,7 @@ public class bubble_sort {
     // so, in first pass we need to do n-1 comparisons, in second pass n-2 comparisons, in third pass n-3 comparisons and so on till 1 comparison 
     // so, total number of comparisons = (n-1) + (n-2) + (n-3) + ..... + 1 = n(n-1)/2 = O(n^2)
     // so, time complexity of bubble sort is O(n^2) in worst and average
+    // but in best case when the array is already sorted, we need to do only n-1 comparisons and no swaps, so time complexity is O(n) in best case
 
 
     public static void main(String[] args) {
