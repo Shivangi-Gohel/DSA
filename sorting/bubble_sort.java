@@ -19,13 +19,19 @@ public class bubble_sort {
 
     public static void main(String[] args) {
         int arr[] = {5,1,4,2,8};
+        
         for(int i=arr.length-1; i>=0; i--){ // for n elements we need n-1 passes
+            int didSwap = 0;
             for(int j=0; j<=i-1; j++){ // in every next pass we can ignore the last element as it is already sorted
                 if(arr[j] > arr[j+1]){ // if the current element is greater than the next element, swap them
                     int temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                    didSwap = 1;
                 }
+            }
+            if(didSwap == 0){ // if no swap happened in the inner loop, the array is already sorted
+                break;
             }
         }
         for(int i=0; i<arr.length; i++){
