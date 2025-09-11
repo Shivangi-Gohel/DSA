@@ -1,6 +1,6 @@
 package sorting;
 
-public class selection_sort {
+public class SelectionSort {
     // for sorting elements of array in ascending order we need to find the minimum element in the unsorted array and swap it with the first element of the unsorted array.
 
     // ex. arr[] = {64, 25, 12, 22, 11}

@@ -1,6 +1,6 @@
 package sorting;
 
-public class insertion_sort {
+public class InsertionSort {
     // in insertion sort we take one element at a time and insert it into its correct position in the sorted part of the array
     // ex:- 5 1 4 2 8
     // In first pass: take 1 and compare it with 5, as 1<5, insert 1 before 5 -> 1 5 4 2 8

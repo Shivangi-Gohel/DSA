@@ -1,6 +1,6 @@
 package sorting;
 
-public class bubble_sort {
+public class BubbleSort {
     // in bubble sort we repeatedly swap the adjacent elements if they are in wrong order
     // ex:- 5 1 4 2 8
     // In first pass: take 2-2 elements and compare them
