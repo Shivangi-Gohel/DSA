@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.*;
+
 public class MergeSort {
     // merge sort is a divide and merge algorithm
     // in merge sort we divide the array into two parts, sort the two parts and then merge the two sorted parts
@@ -23,7 +25,7 @@ public class MergeSort {
 
 
     static void mergeSort(int arr[], int low, int high) {
-        if(low == high) {
+        if(low >= high) {
             return;
         }
         int mid = (low + high) / 2;
@@ -33,38 +35,30 @@ public class MergeSort {
     }
 
     static void merge(int arr[], int low, int mid, int high) {
-       int n1 = mid - low + 1;
-        int n2 = high - mid;
+        ArrayList<Integer> temp = new ArrayList<>();
+        int left = low;
+        int right = mid + 1;
 
-        // Create temp arrays
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-
-        // Copy data
-        for (int i = 0; i < n1; i++) {
-            L[i] = arr[low + i];
-        }
-        for (int j = 0; j < n2; j++) {
-            R[j] = arr[mid + 1 + j];
-        }
-
-        // Merge the temp arrays back into nums
-        int i = 0, j = 0, k = low;
-
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k++] = L[i++];
+        while(left <= mid && right <= high) {
+            if(arr[left] <= arr[right]) {
+                temp.add(arr[left]);
+                left++;
             } else {
-                arr[k++] = R[j++];
+                temp.add(arr[right]);
+                right++;
             }
         }
 
-        // Copy remaining elements
-        while (i < n1) {
-            arr[k++] = L[i++];
+        while(left <= mid) {
+            temp.add(arr[left]);
+            left++;
         }
-        while (j < n2) {
-            arr[k++] = R[j++];
+        while(right <= high) {
+            temp.add(arr[right]);
+            right++;
+        }
+        for(int i=low; i<=high; i++) {
+            arr[i] = temp.get(i - low);
         }
     }
 
